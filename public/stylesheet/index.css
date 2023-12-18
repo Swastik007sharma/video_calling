@@ -1,0 +1,332 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
+    color: #845695;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    padding: 10px 90px 10px 70px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#site_name {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.logo-container img {
+    width: 50px;
+    padding-left: 10px;
+}
+
+.profile-container {
+    position: relative;
+    cursor: pointer;
+}
+
+#profile-icon {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 18px;
+    gap: 3px;
+}
+
+.profile-card {
+    color: #111;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: -80px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the Sign Out button */
+.profile-card a {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    margin: 3px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+/* Hover effect for the Sign Out button */
+.profile-card a:hover {
+    background-color: #d32f2f;
+    /* Darker red on hover */
+}
+
+#frontpage-container {
+    text-align: center;
+    position: relative;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    padding: 2rem 2rem;
+}
+
+#main_text {
+    width: 30%;
+    line-height: 2rem;
+}
+
+#main_text>p {
+    line-height: 1.5rem;
+    margin: 10px 0 20px 0;
+}
+
+.hero {
+    width: 70%;
+}
+
+.login-with-google-btn {
+    transition: background-color .3s, box-shadow .3s;
+
+    padding: 12px 16px 12px 42px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+
+    color: #757575;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+    text-decoration: none;
+
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 12px 11px;
+}
+
+.login-with-google-btn:hover {
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+.login-with-google-btn:active {
+    background-color: #eeeeee;
+}
+
+.login-with-google-btn:focus {
+    outline: none;
+    box-shadow:
+        0 -1px 0 rgba(0, 0, 0, .04),
+        0 2px 4px rgba(0, 0, 0, .25),
+        0 0 0 3px #c8dafc;
+}
+
+.login-with-google-btn:disabled {
+    filter: grayscale(100%);
+    background-color: #ebebeb;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+    cursor: not-allowed;
+}
+
+/* Styles for the Sign Out button in the Google authentication section */
+#g-signout-btn {
+    background-color: #f44336;
+    /* Red background color */
+    color: #fff;
+    /* White text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for the Sign Out button */
+#g-signout-btn:hover {
+    background-color: #d32f2f;
+    /* Darker red on hover */
+}
+
+/* h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: #66c7f4;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #85d6ff;
+} */
+
+/* About and Contact Us Sections */
+#about,
+#contact-us {
+    margin: 20px;
+    width: 40%;
+    /* Set width to 40% */
+}
+
+#about {
+    bottom: 10px;
+    left: 10%;
+    /* Adjust the right margin as needed */
+}
+
+#contact-us {
+    bottom: 10px;
+    right: 10%;
+    /* Place at the bottom right */
+    width: 35%;
+    /* Adjust width for smaller screens */
+}
+
+#details {
+    display: flex;
+    justify-content: space-around;
+}
+
+#about h2,
+#contact-us h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#about p,
+#contact-us p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Copyright Notice */
+#copyright {
+    width: 50%;
+    margin: auto;
+    font-size: 14px;
+    color: #666;
+}
+
+#copyright p {
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+
+    #about,
+    #contact-us {
+        width: 80%;
+        /* Adjust width for smaller screens */
+        text-align: center;
+    }
+
+    #about {
+        left: 10%;
+        /* Adjust left margin for smaller screens */
+    }
+
+    #contact-us {
+        right: 10%;
+        /* Adjust right margin for smaller screens */
+    }
+
+    #toggle-mode-btn {
+        top: 10px;
+        left: 10px;
+    }
+}
