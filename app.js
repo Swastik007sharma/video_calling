@@ -7,10 +7,21 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const connectDB = require('./conf/db')
 const authRoutes = require('./routes/authRoutes');
+const cors = require('cors');
 
 connectDB()
 
 const app = express();
+
+// CORS configuration
+app.use(cors({
+    origin: process.env.NODE_ENV === 'production' 
+        ? 'https://video-calling-keen.onrender.com'  // Replace with your actual domain
+        : 'http://localhost:3000',  // Replace with your local frontend port
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Passport config
 require('./conf/passport')(passport);
