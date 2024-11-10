@@ -1,16 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    function showProfile(){
-        let profileElement = document.getElementById('profile-card');
-        let currentDisplay = profileElement.style.display;
-        if(currentDisplay === "none"){
-            profileElement.style.display = "flex";
-        } else {
-            profileElement.style.display = "none";
-        }
+    const profileCard = document.getElementById('profile-card');
+    const profileContainer = document.getElementById('profile-container');
+    
+    function toggleProfile(e) {
+        e.stopPropagation();
+        let currentDisplay = profileCard.style.display;
+        profileCard.style.display = currentDisplay === "none" || currentDisplay === "" ? "flex" : "none";
     }
     
-    const profile_btn = document.getElementById('profile-container');
-    profile_btn.addEventListener('click', showProfile);
+    // Close profile card when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!profileContainer.contains(e.target)) {
+            profileCard.style.display = "none";
+        }
+    });
+    
+    profileContainer.addEventListener('click', toggleProfile);
 });
 
 

@@ -84,3 +84,53 @@ button,
 #members__container {
   transition: all 0.3s ease;
 }
+
+/* Tablet and smaller desktop */
+@media (max-width: 1024px) {
+    #frontpage-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #auth-section {
+        margin: 2rem auto;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    #site_name {
+        font-size: 1.2rem;
+    }
+
+    #main_text h1 {
+        font-size: 2rem;
+    }
+
+    #auth-section {
+        padding: 1.5rem;
+    }
+
+    .auth-tab {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .logo-container img {
+        height: 30px;
+    }
+
+    #main_text {
+        padding: 1rem;
+    }
+
+    .auth-tabs {
+        flex-direction: column;
+    }
+}
