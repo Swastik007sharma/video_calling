@@ -12,7 +12,11 @@
 }
 
 #members__container {
+<<<<<<< HEAD
   display: block;
+=======
+  display: block;    /* . */
+>>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
   background-color: #262625;
   border-right: 1px solid #797a79;
   overflow-y: auto;
@@ -75,7 +79,11 @@
 }
 
 #messages__container {
+<<<<<<< HEAD
   display: block;
+=======
+  display: block;  /* . */
+>>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
   height: calc(100vh - 85px);
   background-color: #262625;
   right: 0;
@@ -248,9 +256,15 @@
     display: none;
   }
 
+<<<<<<< HEAD
   #members__button {
     display: block;
   }
+=======
+  /* #members__button {
+    display: block;
+  } */
+>>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
 
   #stream__container {
     width: calc(100% - 25rem);
@@ -284,6 +298,7 @@
 
   #messages__container {
     display: none;
+<<<<<<< HEAD
     position: fixed;
     top: 0;
     left: 0;
@@ -300,6 +315,13 @@
   #messages__container.active {
     display: block;
   }
+=======
+  }
+
+  /* #chat__button {
+    display: block;
+  } */
+>>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
 }
 
 /* check it later */
@@ -352,6 +374,7 @@
   transition: all 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 .stream__actions a:hover,
 .stream__actions button:hover {
   background-color: #6a5acd;
@@ -363,6 +386,8 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+=======
+>>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
 .stream__actions a svg,
 .stream__actions button svg {
   width: 1.5rem;
@@ -370,6 +395,7 @@
   fill: #ede0e0;
 }
 
+<<<<<<< HEAD
 .stream__actions a:hover svg,
 .stream__actions button:hover svg {
   fill: #fff;
@@ -377,6 +403,13 @@
 
 .stream__actions button.active svg {
   fill: #fff;
+=======
+.stream__actions a.active,
+.stream__actions button.active,
+.stream__actions a:hover,
+.stream__actions button:hover {
+  background-color: #845695;
+>>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
 }
 
 #join-btn{
@@ -394,6 +427,7 @@
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .close-container {
   display: none;
   position: absolute;
@@ -407,3 +441,5 @@
   }
 }
 
+=======
+>>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69

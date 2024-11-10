@@ -25,7 +25,11 @@ router.get('/lobby', ensureAuth, async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 router.get('/javascript/room.html', ensureAuth, (req, res) => {
+=======
+router.get('/javascript/room.html', (req, res) => {
+>>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
   res.render('room'); // Adjust the template name if needed
 });
 
