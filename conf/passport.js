@@ -49,7 +49,12 @@ module.exports = function (passport) {
   })
 
   // used to deserialize the user
-  passport.deserializeUser((id, done) => {
-    done(null,id)
-		});
+  passport.deserializeUser(async (id, done) => {
+    try {
+      const user = await User.findById(id);
+      done(null, user);
+    } catch (err) {
+      done(err, null);
+    }
+  });
   }

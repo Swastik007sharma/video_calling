@@ -6,6 +6,7 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const connectDB = require('./conf/db')
+const authRoutes = require('./routes/authRoutes');
 
 connectDB()
 
@@ -25,12 +26,18 @@ app.set('view engine','ejs');
 
 // Middleware & DB for Sessions Setup
 app.use(express.urlencoded({extended:true}))
+app.use(express.json());
 app.use(
     session({
       secret: 'keyboard cat',
       resave: false,
       saveUninitialized: false,
       store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+      cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+      }
     })
   )
 
@@ -40,6 +47,12 @@ app.use(passport.session())
 
 // Use Routes
 app.use(require("./routes/index"))
-app.use(require('./routes/auth'))
+app.use('/auth', authRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
 
 app.listen(PORT,console.log(`listening at ${PORT}`)) 

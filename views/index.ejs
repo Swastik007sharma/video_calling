@@ -47,11 +47,49 @@
 						or creating a new one.
 					</p>
 
-					<div id="google-auth-section">
-						<div class="g-signin2" data-onsuccess="onSignIn"></div>
-						<a href="/auth/google" class="login-with-google-btn">
-							Log In With Google
-						</a>
+					<div id="auth-section">
+						<div class="auth-tabs">
+							<button class="auth-tab active" data-tab="signin">Sign In</button>
+							<button class="auth-tab" data-tab="signup">Sign Up</button>
+						</div>
+
+						<!-- Sign In Form -->
+						<form id="signin-form" class="auth-form active">
+							<div class="form-group">
+								<input type="email" name="email" placeholder="Email" required>
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" placeholder="Password" required>
+							</div>
+							<button type="submit">Sign In</button>
+						</form>
+
+						<!-- Sign Up Form -->
+						<form id="signup-form" class="auth-form">
+							<div class="form-group">
+								<input type="text" name="name" placeholder="Full Name" required>
+							</div>
+							<div class="form-group">
+								<input type="email" name="email" placeholder="Email" required>
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" placeholder="Password" required>
+							</div>
+							<div class="form-group">
+								<input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+							</div>
+							<button type="submit">Sign Up</button>
+						</form>
+
+						<div class="auth-divider">
+							<span>OR</span>
+						</div>
+
+						<div id="google-auth-section">
+							<a href="/auth/google" class="login-with-google-btn">
+								Log In With Google
+							</a>
+						</div>
 					</div>
 				</div>
 
@@ -183,6 +221,7 @@
 		></script>
 		<script src="/javascript/slider.js" defer></script>
 		<script src="/javascript/index.js" defer></script>
+		<script src="/javascript/auth.js" defer></script>
 		<script type="text/javascript">
 			(function (w,d) {
 				var loader = function () {
