@@ -10,7 +10,6 @@ const chatButton = document.getElementById('chat__button');
 let activeMemberContainer = false;
 
 memberButton.addEventListener('click', () => {
-<<<<<<< HEAD
   if (memberContainer.style.display === 'none' || !memberContainer.style.display) {
     memberContainer.style.display = 'block';
     if (window.innerWidth <= 768) {
@@ -19,21 +18,11 @@ memberButton.addEventListener('click', () => {
   } else {
     memberContainer.style.display = 'none';
   }
-=======
-  if (activeMemberContainer) {
-    memberContainer.style.display = 'none';
-  } else {
-    memberContainer.style.display = 'block';
-  }
-
-  activeMemberContainer = !activeMemberContainer;
->>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
 });
 
 let activeChatContainer = false;
 
 chatButton.addEventListener('click', () => {
-<<<<<<< HEAD
   if (chatContainer.style.display === 'none' || !chatContainer.style.display) {
     chatContainer.style.display = 'block';
     if (window.innerWidth <= 768) {
@@ -42,15 +31,6 @@ chatButton.addEventListener('click', () => {
   } else {
     chatContainer.style.display = 'none';
   }
-=======
-  if (activeChatContainer) {
-    chatContainer.style.display = 'none';
-  } else {
-    chatContainer.style.display = 'block';
-  }
-
-  activeChatContainer = !activeChatContainer;
->>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
 });
 
 let displayFrame = document.getElementById('stream__box')
