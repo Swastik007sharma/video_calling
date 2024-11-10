@@ -182,3 +182,35 @@
 .avatar__option__selected {
   border: 3px solid #845695;
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a; /* Match your site's background */
+    color: #fff; /* Text color */
+    padding: 20px 0; /* Padding for spacing */
+}
+
+#details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    padding: 0 20px; /* Side padding */
+}
+
+#about,
+#contact-us {
+    margin: 0 20px; /* Margin for spacing */
+}
+
+#privacy-policy {
+    margin: 10px 0; /* Margin for spacing */
+}
+
+#copyright {
+    margin-top: 10px; /* Margin for spacing */
+    text-align: center; /* Center the copyright text */
+}

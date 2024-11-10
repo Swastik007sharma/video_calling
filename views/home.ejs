@@ -147,19 +147,13 @@
 		</div>
 		<footer>
 			<div id="details">
-				<!-- About Section -->
 				<section id="about">
 					<h2>About Meet Hub</h2>
 					<p>
-						Meet Hub is a versatile web application that provides
-						seamless video chat, instant messaging, screen sharing,
-						and live streaming capabilities. Join rooms or create
-						new ones to collaborate effectively and engage with the
-						community.
+						Meet Hub is a versatile web application that provides seamless video chat, instant messaging, screen sharing, and live streaming capabilities. Join rooms or create new ones to collaborate effectively and engage with the community.
 					</p>
 				</section>
 
-				<!-- Contact Us Section -->
 				<section id="contact-us">
 					<h2>Contact Us</h2>
 					<p>
@@ -169,7 +163,13 @@
 				</section>
 			</div>
 
-			<!-- Copyright Notice -->
+			<div id="privacy-policy">
+				<p>
+					<a href="https://www.iubenda.com/privacy-policy/67174679" class="iubenda-white iubenda-noiframe iubenda-embed" title="Privacy Policy">Privacy Policy</a> |
+					<a href="https://www.iubenda.com/privacy-policy/67174679/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed" title="Cookie Policy">Cookie Policy</a>
+				</p>
+			</div>
+
 			<div id="copyright">
 				<p>&copy; 2023 Meet Hub</p>
 			</div>
@@ -183,5 +183,21 @@
 		></script>
 		<script src="/javascript/slider.js" defer></script>
 		<script src="/javascript/index.js" defer></script>
+		<script type="text/javascript">
+			(function (w,d) {
+				var loader = function () {
+					var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+					s.src="https://cdn.iubenda.com/iubenda.js";
+					tag.parentNode.insertBefore(s,tag);
+				};
+				if(w.addEventListener){
+					w.addEventListener("load", loader, false);
+				} else if(w.attachEvent){
+					w.attachEvent("onload", loader);
+				} else {
+					w.onload = loader;
+				}
+			})(window, document);
+		</script>
 	</body>
 </html>
