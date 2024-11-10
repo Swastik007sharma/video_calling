@@ -231,7 +231,6 @@ body {
     /* Darker red on hover */
 }
 
-<<<<<<< HEAD
 #lobby-btn-container {
     display: flex;
     justify-content: center;
@@ -255,8 +254,6 @@ body {
     gap: 10px;
 }
 
-=======
->>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
 /* h1 {
     font-size: 36px;
     margin-bottom: 20px;
