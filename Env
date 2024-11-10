@@ -1,0 +1,11 @@
+# Server port configuration
+PORT=3000
+
+# MongoDB connection string (replace <password> with actual password)
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/YourDatabase?retryWrites=true&w=majority
+
+# Google OAuth configuration (replace with actual client credentials)
+GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET
+
+Create a file named as ".env" and update the above credentials accordingly

@@ -12,7 +12,7 @@
 }
 
 #members__container {
-  display: block;    /* . */
+  display: block;
   background-color: #262625;
   border-right: 1px solid #797a79;
   overflow-y: auto;
@@ -75,7 +75,7 @@
 }
 
 #messages__container {
-  display: block;  /* . */
+  display: block;
   height: calc(100vh - 85px);
   background-color: #262625;
   right: 0;
@@ -248,9 +248,9 @@
     display: none;
   }
 
-  /* #members__button {
+  #members__button {
     display: block;
-  } */
+  }
 
   #stream__container {
     width: calc(100% - 25rem);
@@ -284,11 +284,22 @@
 
   #messages__container {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
   }
 
-  /* #chat__button {
+  #chat__button {
     display: block;
-  } */
+  }
+
+  #members__container.active,
+  #messages__container.active {
+    display: block;
+  }
 }
 
 /* check it later */
@@ -341,6 +352,17 @@
   transition: all 0.2s ease-in-out;
 }
 
+.stream__actions a:hover,
+.stream__actions button:hover {
+  background-color: #6a5acd;
+  color: #fff;
+}
+
+.stream__actions button.active {
+  background-color: #845695;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
 .stream__actions a svg,
 .stream__actions button svg {
   width: 1.5rem;
@@ -348,11 +370,13 @@
   fill: #ede0e0;
 }
 
-.stream__actions a.active,
-.stream__actions button.active,
-.stream__actions a:hover,
-.stream__actions button:hover {
-  background-color: #845695;
+.stream__actions a:hover svg,
+.stream__actions button:hover svg {
+  fill: #fff;
+}
+
+.stream__actions button.active svg {
+  fill: #fff;
 }
 
 #join-btn{
@@ -368,5 +392,18 @@
   left: 50%;
   transform: translate(-50%);
   cursor: pointer;
+}
+
+.close-container {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+@media (max-width: 768px) {
+  .close-container {
+    display: block;
+  }
 }
 

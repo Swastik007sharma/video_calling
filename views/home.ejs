@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/stylesheet/index.css" />
+		<link rel="stylesheet" href="/stylesheet/slider.css" />
+		<link rel="stylesheet" href="/stylesheet/responsive.css" />
+
+		<title>Meet-Hub</title>
+	</head>
+
+	<body>
+		<header>
+			<!-- Navigation Bar -->
+			<nav class="navbar">
+				<div class="logo-container">
+					<img src="/images/logo.png" alt="Logo" />
+					<div>
+						<p id="site_name">Meet-Hub</p>
+					</div>
+				</div>
+
+				<div class="profile-container" id="profile-container">
+					<div class="profile-view">
+						<img
+							src="<%= user.image %>"
+							alt="Profile"
+							id="profile-icon"
+						/>
+						<p><%= user.firstName %></p>
+						<div class="profile-card" id="profile-card">
+							<!-- Google profile information will be displayed here -->
+							<p><%= user.displayName%></p>
+							<p><%= user.email%></p>
+							<a href="/auth/logout">Logout</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div id="frontpage-container">
+			<div id="container">
+				<div id="main_text">
+					<h1>Your Calling App</h1>
+					<p>
+						Welcome to your web app. Get started by joining a room
+						or creating a new one.
+					</p>
+
+					<div id="lobby-btn-container">
+						<a href = '/lobby' Id="lobby-entry">
+							Enter Lobby
+						</a>
+					</div>
+				</div>
+
+				<!-- <div id="hero">
+				<img src="/images/Visualize a.png" alt="hero-img" />
+			</div> -->
+
+				<div id="s1" class="hero">
+					<div class="slider" id="slider1">
+						<!-- Slides -->
+						<div
+							style="
+								background-image: url(/images/video\ call.jpeg);
+							"
+						>
+							<div class="feature_desc">
+								<h2>Video Chat</h2>
+								<p>
+									Enjoy seamless video chat with high-quality
+									video and audio.
+								</p>
+							</div>
+						</div>
+						<div
+							style="
+								background-image: url(/images/message\ feature.jpeg);
+							"
+						>
+							<div class="feature_desc">
+								<h2>Message</h2>
+								<p>
+									Stay connected through instant messaging
+									with other participants.
+								</p>
+							</div>
+						</div>
+						<div
+							style="
+								background-image: url(/images/screen\ sharing.jpeg);
+							"
+						>
+							<div class="feature_desc">
+								<h2>Screen Share</h2>
+								<p>
+									Collaborate effectively by sharing your
+									screen with others in the room.
+								</p>
+							</div>
+						</div>
+						<div
+							style="
+								background-image: url(/images/join_stream.jpeg);
+							"
+						>
+							<div class="feature_desc">
+								<h2>Join Stream</h2>
+								<p>
+									Participate in live streams and engage with``
+									the community.
+								</p>
+							</div>
+						</div>
+						<!-- <div style="
+							background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_bodie-11.jpg);
+						"></div> -->
+						<!-- The Arrows -->
+						<i
+							class="left"
+							class="arrows"
+							style="z-index: 2; position: absolute"
+							><svg viewBox="0 0 100 100">
+								<path
+									d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+								></path></svg
+						></i>
+						<i
+							class="right"
+							class="arrows"
+							style="z-index: 2; position: absolute"
+							><svg viewBox="0 0 100 100">
+								<path
+									d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+									transform="translate(100, 100) rotate(180) "
+								></path></svg
+						></i>
+						<!-- Title Bar -->
+						<span class="titleBar">
+							<h1>Happy Calling.</h1>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div id="details">
+				<!-- About Section -->
+				<section id="about">
+					<h2>About Meet Hub</h2>
+					<p>
+						Meet Hub is a versatile web application that provides
+						seamless video chat, instant messaging, screen sharing,
+						and live streaming capabilities. Join rooms or create
+						new ones to collaborate effectively and engage with the
+						community.
+					</p>
+				</section>
+
+				<!-- Contact Us Section -->
+				<section id="contact-us">
+					<h2>Contact Us</h2>
+					<p>
+						Have questions or feedback? Reach out to us at
+						<a href="mailto:info@meethub.com">info@meethub.com</a>.
+					</p>
+				</section>
+			</div>
+
+			<!-- Copyright Notice -->
+			<div id="copyright">
+				<p>&copy; 2023 Meet Hub</p>
+			</div>
+		</footer>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+			integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="/javascript/slider.js" defer></script>
+		<script src="/javascript/index.js" defer></script>
+	</body>
+</html>

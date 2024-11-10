@@ -5,17 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title>Room</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/stylesheet/responsive.css" />
 		<link
 			rel="stylesheet"
 			type="text/css"
 			media="screen"
-			href="styles/main.css"
+			href="/stylesheet/main.css"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			media="screen"
-			href="styles/lobby.css"
+			href="/stylesheet/lobby.css"
 		/>
 	</head>
 	<body>
@@ -23,8 +24,8 @@
 			<div class="nav--list">
 				<a href="lobby.html">
 					<h3 id="logo">
-						<img src="./images/logo.png" alt="Site Logo" />
-						<span>Mumble</span>
+						<img src="/images/logo.png" alt="Site Logo" />
+						<span>Meet-Hub</span>
 					</h3>
 				</a>
 			</div>
@@ -59,6 +60,23 @@
 					</svg>
 				</a>
 			</div>
+
+			<div class="profile-container" id="profile-container">
+				<div class="profile-view">
+					<img
+						src="<%= user.image %>"
+						alt="Profile"
+						id="profile-icon"
+					/>
+					<div class="profile-card" id="profile-card">
+						<div class="profile-info">
+							<p class="user-name"><%= user.displayName%></p>
+							<p class="user-email"><%= user.email%></p>
+						</div>
+						<a href="/auth/logout">Logout</a>
+					</div>
+				</div>
+			</div>
 		</header>
 
 		<main id="room__lobby__container">
@@ -74,6 +92,8 @@
 							type="text"
 							name="name"
 							required
+							readonly
+							value="<%= user.displayName%>"
 							placeholder="Enter your display name..."
 						/>
 					</div>
@@ -106,5 +126,6 @@
 			</div>
 		</main>
 	</body>
-	<script type="text/javascript" src="js/lobby.js"></script>
+	<script type="text/javascript" src="/javascript/lobby.js"></script>
+	<script src="/javascript/index.js" defer></script>
 </html>

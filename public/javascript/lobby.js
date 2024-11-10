@@ -16,5 +16,5 @@ form.addEventListener('submit', (e) =>{
     if(!inviteCode){
         inviteCode = String(Math.floor(Math.random() * 10000))
     }
-    window.location = `room.html?room=${inviteCode}`
+    window.location = `/javascript/room.html?room=${inviteCode}`
 })

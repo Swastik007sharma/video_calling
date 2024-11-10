@@ -10,25 +10,27 @@ const chatButton = document.getElementById('chat__button');
 let activeMemberContainer = false;
 
 memberButton.addEventListener('click', () => {
-  if (activeMemberContainer) {
-    memberContainer.style.display = 'none';
-  } else {
+  if (memberContainer.style.display === 'none' || !memberContainer.style.display) {
     memberContainer.style.display = 'block';
+    if (window.innerWidth <= 768) {
+      chatContainer.style.display = 'none';
+    }
+  } else {
+    memberContainer.style.display = 'none';
   }
-
-  activeMemberContainer = !activeMemberContainer;
 });
 
 let activeChatContainer = false;
 
 chatButton.addEventListener('click', () => {
-  if (activeChatContainer) {
-    chatContainer.style.display = 'none';
-  } else {
+  if (chatContainer.style.display === 'none' || !chatContainer.style.display) {
     chatContainer.style.display = 'block';
+    if (window.innerWidth <= 768) {
+      memberContainer.style.display = 'none';
+    }
+  } else {
+    chatContainer.style.display = 'none';
   }
-
-  activeChatContainer = !activeChatContainer;
 });
 
 let displayFrame = document.getElementById('stream__box')

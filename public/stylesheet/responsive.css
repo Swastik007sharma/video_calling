@@ -1,0 +1,86 @@
+/* Global Responsive Styles */
+:root {
+  --primary-color: #845695;
+  --secondary-color: #1a1a1a;
+}
+
+/* Base responsive layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  
+  .logo-container img {
+    width: 30px;
+  }
+  
+  #site_name {
+    font-size: 1.2rem;
+  }
+  
+  #nav__links {
+    display: none;
+  }
+}
+
+/* Responsive Video Grid */
+@media (max-width: 1200px) {
+  #streams__container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .video__container {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  #streams__container {
+    grid-template-columns: 1fr;
+  }
+  
+  .video__container {
+    height: 150px;
+    width: 150px;
+  }
+  
+  #messages__container,
+  #members__container {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    z-index: 999;
+  }
+}
+
+/* Responsive Forms */
+@media (max-width: 480px) {
+  #form__container {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .form__field__wrapper input {
+    padding: 12px;
+  }
+}
+
+/* Smooth Transitions */
+.video__container,
+button,
+.nav__link,
+#messages__container,
+#members__container {
+  transition: all 0.3s ease;
+}
