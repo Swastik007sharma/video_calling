@@ -21,19 +21,104 @@
 					</div>
 				</div>
 
-				<div class="profile-container" id="profile-container">
-					<div class="profile-view">
-						<img
-							src="<%= user.image %>"
-							alt="Profile"
-							id="profile-icon"
-						/>
-						<p><%= user.firstName %></p>
-						<div class="profile-card" id="profile-card">
-							<!-- Google profile information will be displayed here -->
-							<p><%= user.displayName%></p>
-							<p><%= user.email%></p>
-							<a href="/auth/logout" class="logout-link">Logout</a>
+				<div class="nav-controls">
+					<button
+						id="theme-toggle"
+						class="theme-toggle"
+						aria-label="Toggle theme"
+					>
+						<!-- <svg class="sun-icon" viewBox="0 0 24 24" width="24" height="24">
+							<path d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm9-9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zm15.7-7.3a1 1 0 0 1 0 1.4l-1 1a1 1 0 0 1-1.4-1.4l1-1a1 1 0 0 1 1.4 0zM6.3 17.7a1 1 0 0 1 0 1.4l-1 1a1 1 0 0 1-1.4-1.4l1-1a1 1 0 0 1 1.4 0zM12 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+						</svg> -->
+						<svg
+							class="sun-icon"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+						>
+							<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+							<g
+								id="SVGRepo_tracerCarrier"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							></g>
+							<g id="SVGRepo_iconCarrier">
+								<circle
+									cx="12"
+									cy="12"
+									r="5"
+									stroke="#1C274C"
+									stroke-width="1.5"
+								></circle>
+								<path
+									d="M12 2V4"
+									stroke="#1C274C"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								></path>
+								<path
+									d="M12 20V22"
+									stroke="#1C274C"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								></path>
+								<path
+									d="M4 12L2 12"
+									stroke="#1C274C"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								></path>
+								<path
+									d="M22 12L20 12"
+									stroke="#1C274C"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								></path>
+								<path
+									d="M19.7778 4.22266L17.5558 6.25424"
+									stroke="#1C274C"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								></path>
+								<path
+									d="M4.22217 4.22266L6.44418 6.25424"
+									stroke="#1C274C"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								></path>
+								<path
+									d="M6.44434 17.5557L4.22211 19.7779"
+									stroke="#1C274C"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								></path>
+								<path
+									d="M19.7778 19.7773L17.5558 17.5551"
+									stroke="#1C274C"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								></path>
+							</g>
+						</svg>
+
+						<svg class="moon-icon" viewBox="0 0 24 24" width="24" height="24">
+							<path
+								d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z"
+							/>
+						</svg>
+					</button>
+					<div class="profile-container" id="profile-container">
+						<div class="profile-view">
+							<img src="<%= user.image %>" alt="Profile" id="profile-icon" />
+							<p><%= user.firstName %></p>
+							<div class="profile-card" id="profile-card">
+								<!-- Google profile information will be displayed here -->
+								<p><%= user.displayName%></p>
+								<p><%= user.email%></p>
+								<a href="/auth/logout" class="logout-link">Logout</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -44,14 +129,12 @@
 				<div id="main_text">
 					<h1>Your Calling App</h1>
 					<p>
-						Welcome to your web app. Get started by joining a room
-						or creating a new one.
+						Welcome to your web app. Get started by joining a room or creating a
+						new one.
 					</p>
 
 					<div id="lobby-btn-container">
-						<a href = '/lobby' Id="lobby-entry">
-							Enter Lobby
-						</a>
+						<a href="/lobby" Id="lobby-entry"> Enter Lobby </a>
 					</div>
 				</div>
 
@@ -62,55 +145,37 @@
 				<div id="s1" class="hero">
 					<div class="slider" id="slider1">
 						<!-- Slides -->
-						<div
-							style="
-								background-image: url(/images/video\ call.jpeg);
-							"
-						>
+						<div style="background-image: url(/images/video\ call.jpeg)">
 							<div class="feature_desc">
 								<h2>Video Chat</h2>
 								<p>
-									Enjoy seamless video chat with high-quality
-									video and audio.
+									Enjoy seamless video chat with high-quality video and audio.
 								</p>
 							</div>
 						</div>
-						<div
-							style="
-								background-image: url(/images/message\ feature.jpeg);
-							"
-						>
+						<div style="background-image: url(/images/message\ feature.jpeg)">
 							<div class="feature_desc">
 								<h2>Message</h2>
 								<p>
-									Stay connected through instant messaging
-									with other participants.
+									Stay connected through instant messaging with other
+									participants.
 								</p>
 							</div>
 						</div>
-						<div
-							style="
-								background-image: url(/images/screen\ sharing.jpeg);
-							"
-						>
+						<div style="background-image: url(/images/screen\ sharing.jpeg)">
 							<div class="feature_desc">
 								<h2>Screen Share</h2>
 								<p>
-									Collaborate effectively by sharing your
-									screen with others in the room.
+									Collaborate effectively by sharing your screen with others in
+									the room.
 								</p>
 							</div>
 						</div>
-						<div
-							style="
-								background-image: url(/images/join_stream.jpeg);
-							"
-						>
+						<div style="background-image: url(/images/join_stream.jpeg)">
 							<div class="feature_desc">
 								<h2>Join Stream</h2>
 								<p>
-									Participate in live streams and engage with
-									the community.
+									Participate in live streams and engage with the community.
 								</p>
 							</div>
 						</div>
@@ -120,13 +185,17 @@
 						<!-- The Arrows -->
 						<i class="arrows left">
 							<svg viewBox="0 0 100 100">
-								<path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path>
+								<path
+									d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+								></path>
 							</svg>
 						</i>
 						<i class="arrows right">
 							<svg viewBox="0 0 100 100">
-								<path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" 
-									transform="translate(100, 100) rotate(180)"></path>
+								<path
+									d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+									transform="translate(100, 100) rotate(180)"
+								></path>
 							</svg>
 						</i>
 						<!-- Title Bar -->
@@ -142,7 +211,10 @@
 				<section id="about">
 					<h2>About Meet Hub</h2>
 					<p>
-						Meet Hub is a versatile web application that provides seamless video chat, instant messaging, screen sharing, and live streaming capabilities. Join rooms or create new ones to collaborate effectively and engage with the community.
+						Meet Hub is a versatile web application that provides seamless video
+						chat, instant messaging, screen sharing, and live streaming
+						capabilities. Join rooms or create new ones to collaborate
+						effectively and engage with the community.
 					</p>
 				</section>
 
@@ -157,8 +229,19 @@
 
 			<div id="privacy-policy">
 				<p>
-					<a href="https://www.iubenda.com/privacy-policy/67174679" class="iubenda-white iubenda-noiframe iubenda-embed" title="Privacy Policy">Privacy Policy</a> |
-					<a href="https://www.iubenda.com/privacy-policy/67174679/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed" title="Cookie Policy">Cookie Policy</a>
+					<a
+						href="https://www.iubenda.com/privacy-policy/67174679"
+						class="iubenda-white iubenda-noiframe iubenda-embed"
+						title="Privacy Policy"
+						>Privacy Policy</a
+					>
+					|
+					<a
+						href="https://www.iubenda.com/privacy-policy/67174679/cookie-policy"
+						class="iubenda-white iubenda-noiframe iubenda-embed"
+						title="Cookie Policy"
+						>Cookie Policy</a
+					>
 				</p>
 			</div>
 
@@ -176,15 +259,16 @@
 		<script src="/javascript/slider.js" defer></script>
 		<script src="/javascript/index.js" defer></script>
 		<script type="text/javascript">
-			(function (w,d) {
+			(function (w, d) {
 				var loader = function () {
-					var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
-					s.src="https://cdn.iubenda.com/iubenda.js";
-					tag.parentNode.insertBefore(s,tag);
+					var s = d.createElement("script"),
+						tag = d.getElementsByTagName("script")[0];
+					s.src = "https://cdn.iubenda.com/iubenda.js";
+					tag.parentNode.insertBefore(s, tag);
 				};
-				if(w.addEventListener){
+				if (w.addEventListener) {
 					w.addEventListener("load", loader, false);
-				} else if(w.attachEvent){
+				} else if (w.attachEvent) {
 					w.attachEvent("onload", loader);
 				} else {
 					w.onload = loader;
