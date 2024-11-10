@@ -667,3 +667,51 @@ body {
 [data-theme="dark"] .moon-icon {
     display: block;
 }
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: none;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.notification-content {
+    padding: 15px 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification.success .notification-content {
+    background-color: #4caf50;
+    color: white;
+}
+
+.notification.error .notification-content {
+    background-color: #f44336;
+    color: white;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

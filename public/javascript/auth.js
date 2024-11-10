@@ -8,78 +8,100 @@ document.addEventListener('DOMContentLoaded', () => {
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             tabs.forEach(t => t.classList.remove('active'));
-            forms.forEach(f => {
-                f.classList.remove('active');
-                f.style.display = 'none';
-            });
-
+            forms.forEach(f => f.classList.remove('active'));
             tab.classList.add('active');
+            
             const formId = `${tab.dataset.tab}-form`;
             const form = document.getElementById(formId);
-            form.style.display = 'block';
-            void form.offsetWidth;
             form.classList.add('active');
         });
     });
 
     // Handle Sign In
-    signinForm.addEventListener('submit', async (e) => {
+    signinForm?.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const email = signinForm.querySelector('input[name="email"]').value;
-        const password = signinForm.querySelector('input[name="password"]').value;
-
+        
         try {
+            const formData = new FormData(signinForm);
             const response = await fetch('/auth/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify(Object.fromEntries(formData)),
+                credentials: 'include'
             });
 
+            const responseData = await response.json();
+            
             if (response.ok) {
-                window.location.href = '/home';
+                showNotification('Sign in successful! Redirecting...', 'success');
+                setTimeout(() => {
+                    window.location.replace('/home');
+                }, 1500);
             } else {
-                const data = await response.json();
-                alert(data.message || 'Sign in failed');
+                showNotification(responseData.message || 'Sign in failed', 'error');
             }
         } catch (error) {
             console.error('Sign in error:', error);
-            alert('Sign in failed. Please try again.');
+            showNotification('Sign in failed. Please try again.', 'error');
         }
     });
 
     // Handle Sign Up
-    signupForm.addEventListener('submit', async (e) => {
+    signupForm?.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const name = signupForm.querySelector('input[name="name"]').value;
-        const email = signupForm.querySelector('input[name="email"]').value;
-        const password = signupForm.querySelector('input[name="password"]').value;
-        const confirmPassword = signupForm.querySelector('input[name="confirmPassword"]').value;
-
-        if (password !== confirmPassword) {
-            alert('Passwords do not match');
-            return;
-        }
-
+        
         try {
+            const formData = new FormData(signupForm);
+            const data = Object.fromEntries(formData);
+            
+            if (data.password !== data.confirmPassword) {
+                showNotification('Passwords do not match', 'error');
+                return;
+            }
+
             const response = await fetch('/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name, email, password }),
+                body: JSON.stringify(data),
+                credentials: 'include'
             });
 
+            const responseData = await response.json();
+            
             if (response.ok) {
-                window.location.href = '/home';
+                showNotification('Signup successful! Redirecting...', 'success');
+                setTimeout(() => {
+                    window.location.replace('/home');
+                }, 1500);
             } else {
-                const data = await response.json();
-                alert(data.message || 'Sign up failed');
+                showNotification(responseData.message || 'Sign up failed', 'error');
             }
         } catch (error) {
             console.error('Sign up error:', error);
-            alert('Sign up failed. Please try again.');
+            showNotification('Sign up failed. Please try again.', 'error');
         }
     });
+
+    // Add close button functionality
+    document.querySelector('.notification-close')?.addEventListener('click', () => {
+        document.getElementById('notification').style.display = 'none';
+    });
 });
+
+function showNotification(message, type = 'success') {
+    const notification = document.getElementById('notification');
+    const messageElement = notification.querySelector('.notification-message');
+    
+    notification.className = `notification ${type}`;
+    messageElement.textContent = message;
+    notification.style.display = 'block';
+
+    // Auto hide after 3 seconds
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000);
+}

@@ -69,13 +69,16 @@ router.post('/signup', async (req, res) => {
             image: '/images/user.png' // Default image
         });
 
+        console.log('User created successfully:', newUser);
+
         // Log the user in
         req.login(newUser, (err) => {
             if (err) {
                 console.error('Login error:', err);
                 return res.status(500).json({ message: 'Error logging in after signup' });
             }
-            return res.status(200).json({ message: 'Signup successful' });
+            console.log('User logged in successfully');
+            res.status(200).json({ message: 'Signup successful', redirectUrl: '/home' });
         });
 
     } catch (error) {
