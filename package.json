@@ -17,11 +17,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "mongoose": "^8.0.3",
-<<<<<<< HEAD
     "passport": "^0.7.0",
-=======
-    "passport": "^0.4.1",
->>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
     "passport-google-oauth2": "^0.2.0",
     "passport-google-oauth20": "^2.0.0"
   },

@@ -18,7 +18,6 @@ router.get(
 
 // @desc        Layout use
 // @route       /auth/logout
-<<<<<<< HEAD
 router.get('/auth/logout', (req, res) => {
   req.logout(function(err) {
     if (err) {
@@ -33,13 +32,5 @@ router.get('/auth/logout', (req, res) => {
     });
   });
 });
-=======
-router.get('/logout', (req, res, next) => {
-  req.logout((error)=>{
-    if(error){return next(error)}
-    res.redirect('/')
-  })
-})
->>>>>>> f6719f33e84bd639b8273ebf8e379c0108a0df69
 
 module.exports = router;
