@@ -98,7 +98,7 @@ router.post('/signin', async (req, res) => {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
 
-        // Verify password using bcrypt directly
+        // Verify password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({ message: 'Invalid email or password' });
@@ -110,7 +110,10 @@ router.post('/signin', async (req, res) => {
                 console.error('Login error:', err);
                 return res.status(500).json({ message: 'Error logging in' });
             }
-            return res.status(200).json({ message: 'Login successful' });
+            return res.status(200).json({ 
+                message: 'Login successful',
+                redirectUrl: '/home'
+            });
         });
 
     } catch (error) {

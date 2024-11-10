@@ -36,9 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (response.ok) {
                 showNotification('Sign in successful! Redirecting...', 'success');
-                setTimeout(() => {
-                    window.location.replace('/home');
-                }, 1500);
+                window.location.href = responseData.redirectUrl || '/home';
             } else {
                 showNotification(responseData.message || 'Sign in failed', 'error');
             }
