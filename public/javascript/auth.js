@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const response = await fetch('/auth/signup', {
+            const response = await fetch('https://video-calling-keen.onrender.com/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,13 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 credentials: 'include'
             });
 
+            console.log('Response Status:', response.status);
             const responseData = await response.json();
-            
+            console.log('Response Data:', responseData);
+
             if (response.ok) {
                 showNotification('Signup successful! Redirecting...', 'success');
-                setTimeout(() => {
-                    window.location.replace('/home');
-                }, 1500);
+                window.location.replace(responseData.redirectUrl || '/home');
             } else {
                 showNotification(responseData.message || 'Sign up failed', 'error');
             }
