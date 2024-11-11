@@ -65,10 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data),
-                credentials: 'include'
+                credentials: 'include',
+                redirect: 'follow'
             });
 
             console.log('Response Status:', response.status);
+            console.log('Response Headers:', response.headers);
             const responseData = await response.json();
             console.log('Response Data:', responseData);
 
