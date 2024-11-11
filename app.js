@@ -15,9 +15,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-    origin: process.env.NODE_ENV === 'production' 
-        ? 'https://video-calling-keen.onrender.com'  // Replace with your actual domain
-        : 'http://localhost:3000',  // Replace with your local frontend port
+    origin:'https://video-calling-keen.onrender.com',  // Replace with your actual domain
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
